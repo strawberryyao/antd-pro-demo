@@ -43,8 +43,12 @@ const routes = [
       {
         path: "/dashboard",
         name: "dashboard",
-        // component: { render: h => h("router-view") },
+        component: { render: h => h("router-view") },
         children: [
+          {
+            path: "/dashboard",
+            redirect: "/dashboard/home"
+          },
           {
             path: "/dashboard/home",
             name: "home",
