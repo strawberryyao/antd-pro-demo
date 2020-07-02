@@ -7,9 +7,10 @@
         v-model="collapsed"
         collapsible
         :trigger="null"
+        width="256px"
       >
-        <div class="logo">WKY CRM</div>
-        <SiderMenu />
+        <div class="logo">金融中心</div>
+        <SiderMenu :theme="navTheme" />
       </a-layout-sider>
       <a-layout>
         <a-layout-header style="background: #fff; padding: 0">
@@ -74,5 +75,8 @@ export default {
   line-height: 64px;
   text-align: center;
   overflow: hidden;
+}
+.nav-theme-dark >>> .logo {
+  color: #ffffff;
 }
 </style>

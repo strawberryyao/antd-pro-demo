@@ -42,6 +42,7 @@ const routes = [
       },
       {
         path: "/dashboard",
+        meta: { icon: "setting", title: "基础设置" },
         name: "dashboard",
         component: { render: h => h("router-view") },
         children: [
@@ -51,6 +52,7 @@ const routes = [
           },
           {
             path: "/dashboard/home",
+            meta: { title: "主页" },
             name: "home",
             component: () =>
               import(/* webpackChunkName: "layout" */ "../layouts/Home.vue")
@@ -62,10 +64,12 @@ const routes = [
   {
     path: "/form",
     name: "form",
+    meta: { icon: "snippets", title: "客户管理" },
     component: { render: h => h("router-view") },
     children: [
       {
         path: "/form/basic-form",
+        meta: { title: "客户服务" },
         name: "basicform",
         component: () =>
           import(/* webpackChunkName: "forms" */ "../views/Forms/BasicForm.vue")
