@@ -1,5 +1,5 @@
 <template>
-  <div>Ant Design ©2018 Created by Ant UED</div>
+  <div>WK CRM ©2020 Created by Strawberry</div>
 </template>
 
 <script>
