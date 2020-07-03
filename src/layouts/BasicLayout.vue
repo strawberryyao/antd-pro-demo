@@ -29,7 +29,7 @@
         </a-layout-footer>
       </a-layout>
     </a-layout>
-    <SettingDrawer />
+    <SettingDrawer :theme="navTheme" />
   </div>
 </template>
 

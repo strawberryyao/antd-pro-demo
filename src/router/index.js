@@ -9,6 +9,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/user",
+    hideInMenu: true,
     component: () =>
       import(/* webpackChunkNameuser: "layouts" */ "../layouts/UserLayout.vue"),
     children: [
@@ -35,11 +36,16 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "layout" */ "../layouts/BasicLayout.vue"),
     children: [
-      // dashboard
       {
         path: "/",
-        redirect: "/dashboard/home"
+        redirect: "/home"
       },
+      {
+        path: "/home",
+        component: () =>
+          import(/* webpackChunkName: "user" */ "../layouts/Welcome.vue")
+      },
+      // dashboard
       {
         path: "/dashboard",
         meta: { icon: "setting", title: "基础设置" },
@@ -48,37 +54,43 @@ const routes = [
         children: [
           {
             path: "/dashboard",
-            redirect: "/dashboard/home"
+            redirect: "/dashboard/basic"
           },
           {
-            path: "/dashboard/home",
-            meta: { title: "主页" },
-            name: "home",
+            path: "/dashboard/basic",
+            meta: { title: "参数设置" },
+            name: "basic",
             component: () =>
-              import(/* webpackChunkName: "layout" */ "../layouts/Home.vue")
+              import(
+                /* webpackChunkName: "layout" */ "../views/Basic/index.vue"
+              )
+          }
+        ]
+      },
+      {
+        path: "/form",
+        name: "form",
+        meta: { icon: "form", title: "客户管理" },
+        component: { render: h => h("router-view") },
+        children: [
+          {
+            path: "/form/basic",
+            meta: { title: "客户服务" },
+            name: "basicform",
+            component: () =>
+              import(
+                /* webpackChunkName: "forms" */ "../views/Forms/BasicForm.vue"
+              )
           }
         ]
       }
     ]
   },
-  {
-    path: "/form",
-    name: "form",
-    meta: { icon: "snippets", title: "客户管理" },
-    component: { render: h => h("router-view") },
-    children: [
-      {
-        path: "/form/basic-form",
-        meta: { title: "客户服务" },
-        name: "basicform",
-        component: () =>
-          import(/* webpackChunkName: "forms" */ "../views/Forms/BasicForm.vue")
-      }
-    ]
-  },
+
   {
     path: "*",
     name: "404",
+    hideInMenu: true,
     component: NotFound
   }
 ];

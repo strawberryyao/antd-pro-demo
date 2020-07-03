@@ -4,7 +4,6 @@ import { Button, Layout, Drawer, Icon, Radio, Menu } from "ant-design-vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import "./my-theme-file.less";
 
 Vue.config.productionTip = false;
 Vue.use(Button);

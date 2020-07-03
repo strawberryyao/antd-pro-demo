@@ -22,7 +22,6 @@
         >
           <a-radio value="dark">黑色</a-radio>
           <a-radio value="light">白色</a-radio>
-          <a-radio value="orange">橙色</a-radio>
         </a-radio-group>
         <h2>导航模式</h2>
         <a-radio-group

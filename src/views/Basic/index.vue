@@ -1,5 +1,5 @@
 <template>
-  <div>Dashboard Home</div>
+  <div>基础配置</div>
 </template>
 
 <script>
